@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*   THEME VARIABLES    */
+
+@theme {
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/*   BASE   */
+@layer base {
+  body > #root {
+    @apply flex min-h-screen flex-col bg-[var(--color-white)];
+  }
+}
+/*   UTILITIES   */
+@utility clip-left-full {
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+}
+
+@utility clip-right-full {
+  -webkit-clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 0 0 100%);
+}
+
+@utility clip-none {
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+/*   COMPONENTS   */
+@layer components {
+}
+
+/*   THEME   */
+@layer theme {
+  .dark {
+    --color-white: #000000;
+    --color-black: #ffffff;
+  }
+}
